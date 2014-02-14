@@ -1,0 +1,18 @@
+{
+  "name": "evie",
+  "version": "0.1.0",
+  "description": "Extends EventEmitter-like classes",
+  "main": "./index.js",
+  "files": [
+    "index.js",
+    "evie.coffee",
+    "README.md"
+  ],
+  "dependencies": {
+    "coffee-script": "~1.7.1"
+  },
+  "devDependencies": {},
+  "repository": "git@github.com:pandastrike/evie.git",
+  "author": "Matthew King <automatthew@gmail.com>",
+  "license": "MIT"
+}
