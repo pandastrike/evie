@@ -4,16 +4,19 @@
 
     npm install evie
 
-## Setup
+
+## Using the provided class
 
 ```coffee
-{evie, Evie} = require "evie"
-
-# Use the provided class
+{Evie} = require "evie"
 
 events = new Evie()
+```
 
-# Mix the extended methods into your own class
+## Creating your own class with Evie as a mixin
+
+```coffee
+{evie} = require "evie"
 
 class MyEvents extends EventEmitter
   evie(@)
