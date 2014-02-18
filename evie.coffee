@@ -7,10 +7,14 @@ evie = (klass) ->
     console.log name
     klass::[name] = method
 
+
 class Evie extends EventEmitter
 
+
   emit: (name, args...) ->
-    super(name, args...)
+    if name != "error" || @_events?.error? || !@_forwards?
+      super(name, args...)
+
     if @_forwards?
       for other in @_forwards
         other.emit name, args...
@@ -20,7 +24,7 @@ class Evie extends EventEmitter
     @_forwards.push(other)
 
   source: ->
-    other = new @constructor
+    other = new @constructor()
     other.forward @
     other
 
@@ -29,7 +33,7 @@ class Evie extends EventEmitter
     go = (fn) ->
       functions.push fn
     builder go
-    events = @source()
+    series = @source()
     (arg) ->
       results = []
       count = 0
@@ -43,15 +47,15 @@ class Evie extends EventEmitter
             if rval instanceof @constructor
               rval.on "success", _fn
               rval.on "error", (error) ->
-                events.emit "error", error
+                series.emit "error", error
             else
               _fn rval
           catch error
-            events.emit "error", error
+            series.emit "error", error
         else
-          events.emit "success", results
+          series.emit "success", results
       _fn( arg )
-      return events
+      return series
 
   concurrently: (builder) ->
     functions = []
