@@ -1,6 +1,6 @@
 {
   "name": "evie",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Extends EventEmitter-like classes",
   "main": "./index.js",
   "files": [

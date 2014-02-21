@@ -23,9 +23,12 @@ class Evie extends EventEmitter
     @_forwards ?= []
     @_forwards.push(other)
 
-  source: ->
+  source: (callback) ->
     other = new @constructor()
     other.forward @
+    if callback?
+      setImmediate ->
+        callback other
     other
 
   serially: (builder) ->
