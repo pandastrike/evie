@@ -16,12 +16,15 @@ class Evie extends EventEmitter
       super(name, args...)
 
     if @_forwards?
-      for other in @_forwards
-        other.emit name, args...
+      for [other, filters] in @_forwards
+        if filters? && filters[name]
+          other.emit filters[name](args...)...
+        else
+          other.emit name, args...
 
-  forward: (other) ->
+  forward: (other, filters) ->
     @_forwards ?= []
-    @_forwards.push(other)
+    @_forwards.push([other, filters])
 
   source: (callback) ->
     other = new @constructor()
