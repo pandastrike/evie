@@ -42,8 +42,7 @@ events = new Evie()
 ```coffee
 {evie} = require "evie"
 
-class MyEvents
-  evie(@)
+class MyEvents extends Evie
 
 events = new MyEvents()
 ```
