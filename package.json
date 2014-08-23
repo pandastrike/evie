@@ -1,14 +1,19 @@
 {
   "name": "evie",
-  "version": "0.1.3",
-  "description": "Extends EventEmitter-like classes",
-  "main": "./evie.coffee",
-  "files": [
-    "index.js",
-    "evie.coffee",
-    "README.md"
-  ],
-  "devDependencies": {},
+  "version": "0.2.0",
+  "description": "EventEmitter-style events with event-bubbling",
+  "main": "./lib/index.js",
+  "scripts": {
+    "prepublish": "coffee -o lib/ -c src/*.coffee",
+    "test": "coffee test/event-channel.coffee"
+  },
+  "dependencies": {
+    "fairmont": "^0.8.2",
+    "typely": "0.0.0"
+  },
+  "devDependencies": {
+    "testify": "^0.2.9"
+  },
   "repository": "git@github.com:pandastrike/evie.git",
   "author": "Matthew King <automatthew@gmail.com>",
   "license": "MIT"
