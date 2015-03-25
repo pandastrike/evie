@@ -52,7 +52,7 @@ class Emitter
     emit = (args...)-> emitter.emit event, args...
     @on event, emit
 
-  @create: -> new Emitter
+  @create: (args...) -> new Emitter args...
 
 
 module.exports = Emitter

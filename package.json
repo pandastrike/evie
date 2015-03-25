@@ -1,6 +1,6 @@
 {
   "name": "evie",
-  "version": "1.0.0-alpha-01",
+  "version": "1.0.0-alpha-02",
   "description": "EventEmitter-style events with event-bubbling",
   "main": "./lib/index.js",
   "scripts": {
