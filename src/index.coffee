@@ -1,5 +1,5 @@
 {is_string, is_object, is_function, first} = require "fairmont"
-PatternSet = require "./pattern-set"
+PatternSet = require "evie-wildcards"
 
 assert = (x) ->
   throw new TypeError unless x

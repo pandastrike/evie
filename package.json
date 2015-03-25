@@ -9,6 +9,7 @@
     "test": "coffee --nodejs --harmony test/index.litcoffee"
   },
   "dependencies": {
+    "evie-wildcards": "^1.0.0-alpha-01",
     "fairmont": "^1.0.0-alpha-15"
   },
   "devDependencies": {
