@@ -1,20 +1,26 @@
 {
   "name": "evie",
-  "version": "0.2.0",
+  "version": "1.0.0-alpha-01",
   "description": "EventEmitter-style events with event-bubbling",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "coffee -o lib/ -c src/*.coffee",
-    "test": "coffee test/event-channel.coffee"
+    "prepublish": "coffee --nodejs --harmony --compile -o ./lib ./src",
+    "watch": "coffee --nodejs --harmony --compile --watch -o lib/ ./src",
+    "test": "coffee --nodejs --harmony test/index.litcoffee"
   },
   "dependencies": {
-    "fairmont": "^0.8.2",
-    "typely": "0.0.0"
+    "fairmont": "^1.0.0-alpha-15"
   },
   "devDependencies": {
-    "testify": "^0.2.9"
+    "amen": "^1.0.0-alpha-06"
   },
-  "repository": "git@github.com:pandastrike/evie.git",
-  "author": "Matthew King <automatthew@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dyoder/evie.git"
+  },
+  "authors": [
+    "Matthew King <matthew@pandastrike.com>",
+    "Dan Yoder <dan@pandastrike.com>"
+  ],
   "license": "MIT"
 }
