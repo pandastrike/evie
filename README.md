@@ -1,6 +1,6 @@
 # Evie
 
-Evie provides an EventEmtter-style interface, but provides support for event-bubbling.
+Evie provides an EventEmitter-style interface, but provides support for event-bubbling.
 
 ```coffee-script
 parent = new Evie
